@@ -4,5 +4,4 @@ Dit is een document waarin diverse Excel recepten worden gegeven. Deze voorbeeld
 
 [link naar online Markdown versie](https://github.com/ornor/avans-excel-cookbook/blob/main/excel-cookbook.md)
 
-[link naar geëxporteerde PDF versie](https://github.com/ornor/avans-excel-cookbook/blob/main/excel-cookbook.pdf)
-
+Er is ook een PDF export versie beschikbaar.
