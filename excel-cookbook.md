@@ -4,6 +4,10 @@
 
 Avans Hogeschool, Academie voor Duurzaam Gebouwde Omgeving, cursus Parametrisch Ontwerpen (DG-MI-PAO).
 
+Document opgesteld met [Typora](https://typora.io/) editor.
+
+Broncode beschikbaar op https://github.com/ornor/avans-excel-cookbook.
+
 ----
 
 
@@ -162,21 +166,66 @@ Je kan hierna alleen de waardes in de cellen die NIET geblokkeerd zijn verandere
 
 Tip: laat het invoerveld voor een wachtwoord altijd leeg. Zodoende kan iedereen het werkblad ook weer aanpassen. Zeker als collega's vertrekken bij bedrijf, kan het zijn dat bepaalde wachtwoorden niet meer beschikbaar zijn. Dan kunnen de rekensheets niet meer aangepast worden. Je kan de beveiliging er weer afhalen door weer rechter muis knop op tabblad onderaan en kies voor "Beveiliging blad opheffen".
 
-## ==Voorwaardelijke opmaak==
+## Voorwaardelijke opmaak
 
+Het kan handig zijn voor een gebruiker om visueel extra informatie te krijgen. Hierbij kan het handig zijn om de opmaak (onder andere de kleur van achtergrond en kleur van tekst) afhankelijk te laten zijn van de waarde die in de cel staat.
 
+In onderstaande geval moet het eindcijfer groen oplichten bij een voldoende en rood worden bij een onvoldoende.
 
-## ==Formules evalueren==
+![image-20231103114532710](./assets/image-20231103114532710.png)
 
-bron- en doelcellen
+Ga naar tabblad "Bestand" en ga naar knop "Voorwaardelijke opmaak". Kies in dit geval voor "Markeringsregels voor cellen", "Groter dan" en kies voor onderstaande configuratie. Doe dat 2x: één keer voor een voldoende en één keer voor onvoldoende (dan wel "Kleiner dan").
 
+![image-20231103114629240](./assets/image-20231103114629240.png)
 
+![image-20231103114737573](./assets/image-20231103114737573.png)
 
-## ==Werken met foutmeldingen==
+![image-20231103114939995](./assets/image-20231103114939995.png)
 
-ISFOUT, ISLEEG, ISNB, ISGETAL etc.
+In dit geval is er gekozen voor een vooraf ingestelde configuratie (groene opvulling met donkergroene tekst) maar je kan iedere opmaak kiezen die je zelf wilt. Bij de knop "Voorwaardelijke opmaak" bij "Regels beheren" zie je welke voorwaarden er bij de betreffende cel horen. Hier kan deze ook weer verwijderen en aanpassen.
 
+![image-20231103114832758](./assets/image-20231103114832758.png)
 
+Voorwaardelijk opmaak is (zoals de naam aangeeft) celopmaak. En deze wordt standaard mee gekopieerd als je een cel kopieert naar een andere cel. Je kunt ook alleen de opmaak (en dus ook voorwaardelijke opmaak) kopiëren met hulp van het kwastje linksboven in scherm.
+
+![image-20231103115635641](./assets/image-20231103115635641.png)
+
+## Formules evalueren
+
+Het kan handig zijn om visueel snel te weten welke cellen een bepaalde formule gebruikt [&Eopf;](https://support.microsoft.com/nl-nl/office/de-relaties-tussen-formules-en-cellen-weergeven-a59bef2b-3701-46bf-8ff1-d3518771d507). Hiervoor is de functie "Broncellen aanwijzen" in tabblad "Formules". Zie onderstaande afbeelding. Echter kan dit effect ook gekregen worden door `F2` in te drukken om de formule te zien met bijhorende cellen (met verschillende kleuren).
+
+![image-20231103115950081](./assets/image-20231103115950081.png)
+
+Andersom kan het interessanter zijn. Bijvoorbeeld in onderstaande voorbeeld: in cel B2 staat de waarde 2, maar welke andere cellen gebruiken eigenlijk deze waarde? Om hier antwoord op te krijgen, kan je "Doelcellen aanwijzen" gebruiken. Met deze functie kan je veel sneller een nieuw rekenblad doorgronden.
+
+![image-20231103120016977](./assets/image-20231103120016977.png)
+
+Een handig optie is de functie "Formule evalueren". Hiermee kan je een ingewikkelde lange formule beetje bij beetje ontleden. Dit is handig om een formule te proberen te begrijpen of handig om een fout op te sporen. Zie hieronder.
+
+![image-20231103120541844](./assets/image-20231103120541844.png)
+
+## Werken met foutmeldingen
+
+Om beter om te gaan met onjuiste invoer van een gebruiker, kan gebruik gemaakt worden van onder ander de volgende Excel functies (beginnend met "IS"): `ISFOUT`, `ISLEEG`, `ISNB`, `ISGETAL` etc. [&Eopf;](https://support.microsoft.com/nl-nl/office/is-is-functies-0f2d7971-6019-40a0-a171-f2d869135665). Dit in combinatie met de functie `ALS`
+
+![image-20231103121857709](./assets/image-20231103121857709.png)
+
+Hierboven wordt als voorbeeld gecheckt of er een waarde is ingevuld. Ook hadden we hier kunnen controleren of het een getal is (en geen stuk tekst) met de functie `isgetal`. Zodoende wordt de gebruiker gelijk al gewaarschuwd (en heeft anders niet door dat die iets verkeerd doet).
+
+In bovenstaande formule wordt een minteken "-" getoond als er wel een juiste invoer is. Er kon ook gekozen worden om de cel leeg te laten bij een juiste invoer (met ""), maar doe dit niet. Want dan is er een formule in cel D2 maar niemand kan zien dat er toch een formule staat. Het is beter dat een formule ALTIJD iets laat zien (zodat men kan zien dat daar een formule aanwezig is).
+
+## Cel verplaatsen
+
+Er zijn twee verschillende manieren om een cel te verplaatsen [&Eopf;](https://support.microsoft.com/nl-nl/office/cellen-rijen-en-kolommen-verplaatsen-of-kopi%C3%ABren-3ebbcafd-8566-42d8-8023-a2ec62746cfc):
+
+1) De cel `kopiëren`, vervolgens `plakken` op nieuwe locatie en dan de oude cel `verwijderen`.
+2) De cel `knippen` en vervolgens `plakken` op nieuwe locatie.
+
+Bovenstaande twee werkwijzen lijken op elkaar maar hebben verschillende effecten.
+
+Gebruik optie 1 (kopiëren, plakken, verwijderen) als je wilt dat andere cellen nog steeds naar deze plek verwijzen (dat de cel verwijzingen dus NIET automatisch worden aangepast naar de nieuwe locatie).
+
+Gebruik optie 2 (knippen, plakken) als er andere cellen naar deze cel verwijzen en je dat nog steeds wilt bij nieuwe locatie. Als je namelijk optie 1 doet, dan verwijzen deze formules nog steeds naar de oude positie en niet naar de nieuwe.
 
 ## Matrix formules
 
@@ -200,30 +249,100 @@ Matrix formules kunnen ook gebruikt worden voor een stelsel vergelijkingen met a
 
 In dit geval blijkt bijvoorbeeld dat de volgende vergelijking klopt:   -9 * ==-6.8== + 2 * ==143,5== + 3 * ==-114,6== = 4
 
-## ==Tekeningen maken==
+## Tekeningen maken
 
- grafiek type 'spreiding'
+Het kan handig zijn om bepaalde invoer weer te geven als een tekening. Zo kan de gebruiker gelijk zien welke waarden deze invoert. Als er een rij/kolom is met x-coördinaten en een rij/kolom met bijhorende y-coördinaten, kan je een tekening weergeven. Dit kan op tabblad "Invoegen", bij "Spreiding" en dan kiezen voor grafiek type "Spreiding met rechte lijnen". Of eventueel lijnen met getekende knopen. Als de gebruiker een coördinaat aanpast, verandert direct ook de afbeelding. 
 
+![image-20231103123531220](./assets/image-20231103123531220.png)
 
+Rechter muis klik op het witte vlak (de grafie) en kies voor "Gegevens selecteren".
 
-## ==Werken met macro's==
+![image-20231103123929428](./assets/image-20231103123929428.png)
 
+Voeg vervolgens een reeks toe (een reeks is in dit geval één onafgebroken lijn). Je kan zoveel lijnen toevoegen als dat je wilt. Klik vervolgens op pijltje-omhoog naast "Reeks X-waarden" (en later ook voor y) om de juiste kolom te selecteren met data.
 
+![image-20231103124104922](./assets/image-20231103124104922.png)
 
-## ==MVC model toegepast op Excel==
+![image-20231103124153295](./assets/image-20231103124153295.png)
 
+Je hebt nu een dynamische tekening.
 
+![image-20231103124651729](./assets/image-20231103124651729.png)
+
+Je kan eventueel nog bij as opties (rechter muis klik op de x-as of de y-as en klik op "As opmaken") aangeven dat de minimum en/of maximum waarde niet automatisch bepaald wordt, maar bijvoorbeeld altijd 10 is.
+
+![image-20231103124530803](./assets/image-20231103124530803.png)
+
+## Werken met macro's
+
+In Excel is het mogelijk om bepaalde handelingen (die je vaker uitvoert) op te nemen. Zo kan je later in één klik (of sneltoets) deze routine meermaals snel uitvoeren. Voorheen heten dat *macro's* en tegenwoordig heet dat in Excel *acties*. Je vindt een aantal knoppen in het tabblad "Automatiseren".
+
+Je kan een *actie* opnemen (op opname knop klikken: "Acties vastleggen" &rarr; "Opnemen") maar je kan ook een script schrijven (programmeren). Dit is in de taal VBA dat staat voor *Visual Basic for Applications*. Deze scripttaal wordt in alle Office programma's ondersteund.
+
+Als je de sneltoets `ALT + F11` gebruikt, zie je een apart venster met daarin alle macro's die van toepassing zijn. Het bespreken van macro's is een vak apart en zal zodoende niet hier verder inhoudelijk behandeld worden.
+
+Om te zorgen dat er geen virussen in Excel terecht komen (via macro's) zijn deze standaard uitgeschakeld. Ook is de bestandsextensie `.xlsx` bedoelt voor bestanden ZONDER macro's (dat is de laatste 'x'). Als je macro's wilt toestaan, moet je de extensie veranderen naar `.xlsm` waarin de laatste 'm' staat voor macro. Dit geldt ook voor andere Office bestanden: `docx`/`docm`,  `pptx`/`pptm` et cetera. Trouwens, voor template bestanden (die als READ ONLY bestand dienen om te kopiëren), wordt de 3e letter vervangen door een 't'. Bij Excel is dat dan `.xltx` en bij Word is dat `.dotx`.
+
+Ook kan je in Excel met macro's zelf een formule-functie maken. Bijvoorbeeld een eigen variant van `GEMIDDELDE`. Zie hiervoor de documentatie [&Eopf;](https://support.microsoft.com/nl-nl/office/aangepaste-functies-in-excel-maken-2f06c10b-3622-40d6-a1b2-b6748ae8231f).
+
+In het algemeen is het NIET wenselijk om macro's te gebruiken als dat niet hoeft. Dit vanuit veiligheidsoogpunt. Ook kan het zijn dat (door bescherming van computer) de rekensheet niet werkt bij bepaalde gebruikers. Ook hebben niet veel mensen ervaring/verstand van de macro taal VBA (dus minder mensen kunnen dit aanpassen). Gebruik macro's alleen als dat echt noodzakelijk is!!!
+
+## MVC model toegepast op Excel
+
+Een veelgebruikt ontwerpmodel bij programmeren van een applicatie, is het MVC model. Dat staat voor Model, View, Controller. Een beknopte Nederlandse omschrijving van dit model is [hier](https://nl.wikipedia.org/wiki/Model-view-controller-model) te vinden.
+
+Het idee is dat (als je een Excel rekenblad maakt) je deze drie onderdelen moet scheiden van elkaar (en dus niet in elkaar laat overlopen). Als je het door elkaar gaat gebruiken, dan wordt het werkblad onoverzichtelijk en wordt de kans op fouten groter.
+
+Hieronder wordt omschreven hoe aspecten uit dit model in Excel kunnen worden geïnterpreteerd.
 
 ### Model
 
-adsf
+Het model definieert de representatie van de informatie waarmee de applicatie werkt. Het is niet alleen de ruwe data, maar het is ook de structuur waarin deze data met elkaar is verbonden.
+
+Stel je gaat een Excel bestand maken waar je ruwe data gebruik van internet (een data tabel met rijen en kollommen met getallen). Dan is het handig om hier een apart tabblad voor te gebruiken waar je deze data in plakt. Dit tabblad hoeft dan ook niet mooi opgemaakt te zijn, is puur om waardes binnen te halen vanuit andere tabbladen.
+
+Mocht de data een jaar later anders zijn (je hebt een nieuwe dataset gedownload), dan hoef je alleen de oude data te vervangen door de nieuwe en de rest werkt dan weer. Tip: gebruik de functie `INDIRECT` of maak gebruik van `namen` als je naar dit data-tabblad verwijst (zie onderwerpen eerder in dit document). Want dan worden er geen verwijzingen verbroken als de data vervangen wordt.
+
+Laat ook de geplakte data zoveel mogelijk intact qua structuur. Als je namelijk de opmaak/structuur van data tabblad door elkaar gaat halen, dan kan je later minder makkelijk deze data vervangen met recentere data.
+
+Als je ruwe tekst data wilt importeren, gebruik dan de functie "Tekst naar kolommen" op het tabblad "Gegevens". Deze *wizard* helpt je om deze tekst om te zetten naar waardes in rijen en kolommen. Dit werkt bijvoorbeeld goed bij data in het formaat `.csv` dat staat voor Comma-Separated Values.
+
+Data tabbladen kunnen ook goed gebruikt worden voor keuze lijstjes. Geef dit data bereik een *naam* en verwijs (bijvoorbeeld met *gegevensvalidatie*) naar deze naam.
 
 ### View
 
-1D leesrichting (in niet 2D, zo werken onze hersenen niet)
+De view is datgene dat de gebruiker ziet en waar deze data invoert en resultaten ziet verschijnen. In de informatica wordt dit vaak 'GUI' (graphical user interface) genoemd. Het is belangrijk om de gebruiker te sturen in jouw Excel zodat diegene instinctief weet waar die waardes kan invoeren en waar die resultaten kan zien.
 
-waarde of formule?; nooit leeg veld achter laten
+Het kan handig zijn om alle invoer en een samenvatting van uitvoer op eerste tabblad te plaatsen. En dat alle overige tabbladen dienen als *controller* en *model* (die de gebruiker niet zelf hoeft te zien. Je kan de tabbladen onderaan een achtergrondkleur geven: maak hierbij het eerste tabblad (waar de gebruiker moet zijn) felgekleurd en maak overige tabbladen grijs (zodat ze minder opvallen).
+
+Geef alle cellen waar de gebruiker iets moet invullen eenzelfde kleur. Dit is in dit document bij de voorbeelden gedaan door deze licht geel te laten kleuren. Dan weet de gebruiker waar die moet zijn om parameters op te geven.
+
+Het kan ook handig zijn om alle formule cellen ook een eigen achtergrondkleur te geven. Je kan hier wellicht meerder kleuren gebruiken voor meerdere typen formules. 
+
+Laat cellen met een formule nooit leeg (dus zorg dat de formule geen leeg stuk tekst genereert). Anders heeft niemand door dat daar een formule staat en kan er iets mis gaan (als iemand later deze sheet wilt aanpassen). Zorg ook dat cellen nooit *verborgen* zijn, dat werkt vaak uiteindelijk averechts.
+
+Maak gebruik van *werkladbeveiliging* om de gebruiker te sturen waar deze waardes kan aanpassen. Ook *gegevensvalidatie* helpt hier bij.
+
+Probeer zoveel mogelijk om alles op één schermbreedte kwijt te kunnen. Dus dat je NIET nog verder naar rechts hoeft te scrollen om een cel te bekijken. Maar werk alleen 1D (één dimensionaal) van boven naar beneden (dus dat de gebruiker wel naar beneden kan scrollen). Onze hersenen vinden het fijn om overzicht te hebben. En een 2D rekensheet (met veel rijen en veel kolommen) maakt deze erg onoverzichtelijk. Het is fijner als de sheet een 'verhaal' is dat je van boven naar beneden kan lezen/volgen.
+
+Je kan het beste het printgebied instellen [&Eopf;](https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e), dat de afdrukbare A4-tjes boven elkaar staan (en dat het zichtbare gebied in de breedte van het scherm, ook de breedte van het A4-tje is). Stel hiertoe bij "Pagina-indeling" bij "Breedte" deze op "1 pagina" in (en de hoogte op automatisch).
+
+![image-20231103134749214](./assets/image-20231103134749214.png)
+
+Algemene tip: bedenk goed wie de gebruiker is! En maak je invoer/uitvoer zo dat diegene dit goed kan begrijpen. Soms moet je de invoer juist extra simpel maken en soms vraagt een gebruiker juist om veel configuratie mogelijkheden. Hoe ga je hier mee om?
 
 ### Controller
 
-asdf
+Alle cellen die het echte rekenwerk doen, horen bij de *controller*. Dit is als het ware het brein van het Excel bestand. Deze haalt data uit de data-tabbladen en haalt ook de input van de gebruiker op. Vervolgens berekent deze bepaalde waardes een geeft deze terug aan de gebruiker op het tabblad van de *view*. 
+
+Het is verstandig om iedere verschillende soort rekentaak (of tussenstap) op een ander tabblad te zetten. Zodoende wordt het geheel stuk overzichtelijk.
+
+Een *controller* tabblad moet overzichtelijk zijn. Niet per se voor de gebruiker (want die hoeft daar niet te komen) maar wel voor een ontwikkelaar. Zorg dat alle stappen goed gedocumenteerd zijn. Jij als maken van deze sheet weet hoe het zit, maar als jij weg gaat bij bedrijf, kan iemand anders dan deze sheet snapppen?
+
+Een mogelijk tabbladindeling is hieronder weergegeven. In dit geval is 'controller 2' geselecteerd en heeft zodoende iets andere kleur nu.
+
+![image-20231103140019882](./assets/image-20231103140019882.png)
+
+De gebruiker weet nu direct (instinctief) dat die naar gele tabblad moet gaan.
+
+Je kan ook kiezen om de invoer en (printbare) uitvoer uit elkaar te halen. Dus ieder op apart tabblad.
