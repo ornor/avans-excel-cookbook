@@ -1,8 +1,8 @@
 # Excel cookbook
 
-Avans Hogeschool, 2023
-Academie voor Duurzaam Gebouwde Omgeving
-cursus Parametrisch Ontwerpen (DG-MI-PAO)
+*versie 03-11-2023*
+
+Avans Hogeschool, Academie voor Duurzaam Gebouwde Omgeving, cursus Parametrisch Ontwerpen (DG-MI-PAO).
 
 ----
 
