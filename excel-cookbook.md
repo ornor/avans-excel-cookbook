@@ -1,6 +1,6 @@
 # Excel cookbook
 
-*versie 03-11-2023*
+*versie 07-11-2024*
 
 Avans Hogeschool, Academie voor Duurzaam Gebouwde Omgeving, cursus Parametrisch Ontwerpen (DG-MI-PAO).
 
@@ -272,6 +272,60 @@ Je hebt nu een dynamische tekening.
 Je kan eventueel nog bij as opties (rechter muis klik op de x-as of de y-as en klik op "As opmaken") aangeven dat de minimum en/of maximum waarde niet automatisch bepaald wordt, maar bijvoorbeeld altijd 10 is.
 
 ![image-20231103124530803](./assets/image-20231103124530803.png)
+
+## Gebruik van parameters binnen een formule
+
+Soms gebruik je in een formule vaker hetzelfde element (sub formule), dan kan de formule `LET` [&Eopf;](https://support.microsoft.com/nl-nl/office/let-functie-34842dd8-b92b-4d3f-b325-b8b8f9908999) handig zijn. Bijvoorbeeld als je wilt checken of een bepaalde cel een getal is, en afhankelijk daarvan een berekening maken, of een foutmelding geven.
+
+![image-20241107105436669](./.assets/image-20241107105436669.png)
+
+In bovenstaande voorbeeld gebruik je twee keer "C2" in de formule. Je kan dit ook zo opschrijven, dan er maar één verwijzing naar C2 aanwezig is:
+
+![image-20241107105705450](./.assets/image-20241107105705450.png)
+
+Bij `LET` kan je één of meerdere parameters opgeven. Dat doe je door eerst een naam te geven, dan puntkomma en dan de definitie/subformule. Vervolgens (na een nieuwe puntkomma) komt de formule, waarbij je alle namen kan gebruiken.
+
+Voordeel is dat de naam alleen geldig is in deze ene formule en zo niet in conflict kan komen met een andere formule die zelfde naam gebruikt.
+
+In onderstaande voorbeeld worden twee parameters gedefinieerd. Bovendien is de uiteindelijk formule "b*h" nu een stuk leesbaarder geworden. En weet iemand die deze formule bekijkt gelijk waar het over gaat, zonder de broncellen te hoeven nalopen.
+
+![image-20241107105956383](./.assets/image-20241107105956383.png)
+
+Er kan ook een hele formule worden gedefinieerd met een naam. Zie voorbeeld hieronder, waarbij ook het oppervlak wordt uitgerekend van een rechthoek met "b*h".
+
+![image-20241107110137755](./.assets/image-20241107110137755.png)
+
+## Variabel bereik cellen met overloopfuncties
+
+Excel heeft de mogelijkheid om te rekenen met een lijst van invoer waardes terwijl de uitvoer maar in één cel is geformuleerd. Dat wordt `overloop` genoemd.
+
+In onderstaande voorbeeld worden de waarden in een lijst (met bereik `B3:B7`) verdubbelt. Nu wordt niet iedere cel in kolom C een nieuwe formule getypt, maar wordt ALLEEN in de bovenste cel `C3` het bereik vermenigvuldigd met 2. Omdat de formule meerdere invoerwaarden heeft, maar omdat deze cel maar één uitvoerwaarde kan hebben, worden de cellen onder `C3` automatisch gevuld met uitkomsten. Ondanks dat in de cellen `C4:C7` geen formules staan, worden daar toch waarden weergegeven.
+
+![image-20241107112706493](./.assets/image-20241107112706493.png)
+
+Als je in het 'overloopgebied' (in bovenstaande voorbeeld is dat `C4:C7`) een andere formule/waarde typt, dan geeft Excel een foutmelding `#OVERLOPEN!` [&Eopf;](https://support.microsoft.com/nl-nl/office/een-overloop-fout-corrigeren-ffe0f555-b479-4a17-a6e2-ef9cc9ad4023) omdat Excel verwacht dat je ruimte vrij houdt om formule daarboven te kunnen laten overlopen.
+
+![image-20241107113952803](./.assets/image-20241107113952803.png)
+
+Je kan vervolgens weer verder rekenen met de cel `C3` INCLUSIEF het overloopgebied, door achter de verwijzing naar `C3` een hekje te typen. In onderstaande voorbeeld wordt een nieuwe kolom gemaakt door weer de helft van de waarden van kolom C te berekenen. Ook dit is weer een nieuwe overloopfunctie met overloopgebied (in kolom D).
+
+![image-20241107114109578](./.assets/image-20241107114109578.png)
+
+Sommige functies zoals `ASELECT.MATRIX` (dat een n-aantal willekeurige getallen, in dit geval tussen 0 en 100, bepaalt) genereren als output meerdere waardes en zullen dus ook gebruik maken van een overloopgebied.
+
+![image-20241107114744410](./.assets/image-20241107114744410.png)
+
+In bovenstaande voorbeeld kan gemiddelde 'mu' berekend worden met een hekje verwijzing naar `F5`.
+
+![image-20241107114838364](./.assets/image-20241107114838364.png)
+
+## Opmerkingen in berekeningsformule
+
+Het kan handig zijn om extra opmerkingen te plaatsen in een formule. Om extra uitleg/toelichting te geven aan diegene over de formule ZONDER dat het standaard zichtbaar is op het werkblad. Dat kan op een aantal manieren. Een zeer gebruiksvriendelijke is gebruik van de functie `N` [&Eopf;](https://support.microsoft.com/nl-nl/office/n-functie-a624cad1-3635-4208-b54a-29733d1278c9).
+
+Deze functie zet een bepaalde waarde om naar een getal. Als je een stuk tekst (tussen dubbele aanhalingstekens) aan `N`  meegeeft, dan komt er altijd de waarde 0 uit. Je kan een formule (die een bepaald getal berekent) eindigen met `+ N("opmerking")` waardoor de uitkomst plus nul wordt gedaan (en zo geen effect heeft). Zie voorbeeld hieronder:
+
+![image-20241107112252066](./.assets/image-20241107112252066.png)
 
 ## Werken met macro's
 
