@@ -28,17 +28,17 @@ In de blauwe cel zijn zowel de rij als kolom vastgezet. In de rode cel is alleen
 
 Er kan in een formule worden verwijzen naar andere cellen d.m.v. het adres (bijvoorbeeld `$A$2`). Het is ook mogelijk om een bepaalde cel, of een bereik meerdere aaneengesloten cellen een *naam* te geven [&Eopf;](https://support.microsoft.com/nl-nl/office/namen-defini%C3%ABren-en-gebruiken-in-formules-4d0f13ac-53b7-422e-afd2-abd7ff379c64).
 
-![image-20231102161344086](./.assets/image-20231102161344086.png)
+![](./.assets/image-20231102161344086.png)
 
 In bovenstaande voorbeeld wordt de inhoud van een balk uitgerekend. Cel C2 krijgt nu de naam `b` door deze te selecteren en vervolgens in het witte invoervakje links naast de formule werkbalk, de nieuwe naam te typen (en op `ENTER` te drukken).
 
-![image-20231102161622009](./.assets/image-20231102161622009.png)
+![](./.assets/image-20231102161622009.png)
 
 Als je nu de nieuwe formule (met namen) in cel C6 gaat typen, dan zie je ingevoerde naam ook in de keuzelijst terug komen (tijdens het typen). 
 
 Het voordeel van het geven van een naam, is dat het niet uitmaakt waar de breedte-waarde staat. Zolang het bereik van de naam `b` maar naar juiste invoerveldje gaat, komt het goed. Mocht je later de formules willen veranderen, omdat je een anders invoerveld wilt gebruiken voor de breedte-waarde, dan hoef je NIET alle formules aan te passen (want naam klopt dan nog steeds), maar je hoeft alleen het bereik van de naam aan te passen. Dit kan je doen via het tabblad "Formules" bij de knop "Namen beheren". Selecteer de naam en pas het bereik aan via de knop "Bewerken".
 
-![image-20231102162100683](./.assets/image-20231102162100683.png)
+![](./.assets/image-20231102162100683.png)
 
 Een ander voordeel van namen geven is dat de formules leesbaarder kunnen worden.
 
@@ -48,19 +48,19 @@ Namen zijn erg handig in combinatie met *gegevensvalidatie* [&Eopf;](https://sup
 
 Stel je hebt een lijst met namen van personen. En je wilt dat je in een andere cel (eventueel op een ander tabblad) in een cel kan kiezen tussen deze personen (in onderstaande situatie is dat cel F8). Dan is het handig om een keuzelijst te hebben (om te zorgen dat je nooit een niet geldige naam kan typen). Om dat te doen, ga je naar tabblad "Gegevens" naar de knop "Gegevensvalidatie". 
 
-![image-20231102163005981](./.assets/image-20231102163005981.png)
+![](./.assets/image-20231102163005981.png)
 
 Je krijgt dan een popup menu met de volgende opties. Bij het vakje "toestaan" kan je restricties meegeven welke waarden gebruikt mogen worden. In dit geval kies je voor je voor "lijst" (i.p.v. "alle waarden"). Je kan dan naast het vakje van "Bron" klikken op het pijltje omhoog om de cellen F3:F6 te selecteren. Je hebt nu een keuzelijst gemaakt.
 
-![image-20231102163222779](./.assets/image-20231102163222779.png)![image-20231102163359507](./assets/image-20231102163359507.png)
+![image-20231102163222779](./.assets/image-20231102163222779.png)![image-20231102163359507](./.assets/image-20231102163359507.png)
 
 Een nadeel is dat als de lijst met later nog wordt aangepast, je ook alle gegevensvalidaties moet gaan aanpassen. Ook is het een nadeel dat je geen cellen kan selecteren van andere tabbladen (bij de invoeroptie "Bron"). Beiden kunnen opgelost worden door de invoercellen een naam te geven. Vervolgens type je bij "Bron" een `=` met daarachter de naam die je aan invoerbereik hebt gegeven.
 
-![image-20231102162707285](./.assets/image-20231102162707285.png) ![image-20231102163730260](./assets/image-20231102163730260.png)
+![image-20231102162707285](./.assets/image-20231102162707285.png) ![image-20231102163730260](./.assets/image-20231102163730260.png)
 
 Een andere interessante functie bij gegevensvalidatie, is het toevoegen van helptekst als een gebruiker een bepaalde cel selecteert. In dit geval kunnen we hierboven bij het tabblad "Invoerbericht" dit bericht nog invoeren.
 
-![image-20231102164051290](./.assets/image-20231102164051290.png) ![image-20231102164123604](./assets/image-20231102164123604.png)
+![image-20231102164051290](./.assets/image-20231102164051290.png) ![image-20231102164123604](./.assets/image-20231102164123604.png)
 
 ## Waarde zoeken in tabel
 
